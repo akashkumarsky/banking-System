@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Account</title>
+</head>
+<body>
+    <h1>View Account</h1>
+    <form action="#" th:action="@{/view}" method="get">
+        <label for="id">Account ID:</label>
+        <input type="number" id="id" name="id" /><br/>
+        <button type="submit">View Account</button>
+    </form>
+    <div th:if="${account != null}">
+        <h2>Account Details</h2>
+        <p>ID: <span th:text="${account.id}"></span></p>
+        <p>Holder Name: <span th:text="${account.accountHolderName}"></span></p>
+        <p>Balance: <span th:text="${account.balance}"></span></p>
+    </div>
+    <a href="/">Back to Home</a>
+</body>
+</html>
